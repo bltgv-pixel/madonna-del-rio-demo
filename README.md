@@ -15,6 +15,7 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 
 - `index.html`: homepage evocativa del santuario.
 - `storia.html`: racconto storico animato con effetto testo in prospettiva.
+- `cronologia.html`: linea del tempo storica e struttura per le future tappe del recupero.
 - `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
 - `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
 - `style.css`: colori, layout responsive e animazioni.
@@ -31,6 +32,9 @@ Le immagini si trovano in `assets/`:
 - `damasco.jpg`: texture damascata rossa.
 - `logo-amici-santuario.png`: logo mostrato nell'intestazione.
 - `madonna-del-rio-1910.jpg`: immagine storica usata come sfondo nella pagina `storia.html`.
+- `madonnina-originale.jpeg`: immagine della formella originale usata nella cronologia.
+- `baldisserri-1893.pdf`: documento storico linkato dalla cronologia.
+- `baldisserri-1893.txt`: trascrizione consultabile del documento di don Luigi Baldisserri.
 - `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
 
