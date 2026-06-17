@@ -470,6 +470,9 @@ p {
 }
 
 .story-crawl {
+  --story-start: 76vh;
+  --story-end: -3200px;
+  --story-duration: 130s;
   width: min(86vw, 54rem);
   color: var(--gold-bright);
   font-family: Georgia, "Times New Roman", serif;
@@ -478,8 +481,8 @@ p {
   line-height: 1.55;
   text-align: justify;
   text-shadow: 0 0 16px rgba(0, 0, 0, 0.8), 0 0 24px rgba(226, 183, 107, 0.18);
-  transform: rotateX(24deg) translateY(76vh);
-  animation: storyCrawl 62s linear infinite;
+  transform: rotateX(24deg) translateY(var(--story-start));
+  animation: storyCrawl var(--story-duration) linear infinite;
 }
 
 .story-crawl h1 {
@@ -531,11 +534,11 @@ p {
 
 @keyframes storyCrawl {
   0% {
-    transform: rotateX(24deg) translateY(76vh);
+    transform: rotateX(24deg) translateY(var(--story-start));
   }
 
   100% {
-    transform: rotateX(24deg) translateY(-215%);
+    transform: rotateX(24deg) translateY(var(--story-end));
   }
 }
 
@@ -1032,7 +1035,6 @@ p {
     width: min(92vw, 32rem);
     font-size: 1.18rem;
     line-height: 1.52;
-    animation-duration: 74s;
   }
 
   .hero-actions,

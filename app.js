@@ -13,10 +13,25 @@
 
   function initStoryCrawl() {
     const stage = document.querySelector("#storyStage");
+    const crawl = document.querySelector("#storyCrawl");
     const status = document.querySelector("#storyStatus");
 
-    if (!stage || !status) {
+    if (!stage || !crawl || !status) {
       return;
+    }
+
+    let resizeTimer = 0;
+
+    function configureCrawl() {
+      const stageHeight = stage.clientHeight || window.innerHeight;
+      const textHeight = crawl.scrollHeight;
+      const start = Math.round(stageHeight * 0.82);
+      const end = -Math.round(textHeight + stageHeight * 0.95);
+      const duration = Math.min(190, Math.max(120, Math.round((textHeight + stageHeight * 1.6) / 26)));
+
+      crawl.style.setProperty("--story-start", `${start}px`);
+      crawl.style.setProperty("--story-end", `${end}px`);
+      crawl.style.setProperty("--story-duration", `${duration}s`);
     }
 
     function togglePause() {
@@ -33,6 +48,13 @@
         togglePause();
       }
     });
+
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(configureCrawl, 150);
+    });
+
+    configureCrawl();
   }
 
   function initDonationDemo() {
