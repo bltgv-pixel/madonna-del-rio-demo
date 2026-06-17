@@ -27,6 +27,7 @@ Le immagini si trovano in `assets/`:
 - `abside.jpg`: immagine usata nelle card e nella sezione emozionale.
 - `facciata.jpg`: immagine della facciata.
 - `damasco.jpg`: texture damascata rossa.
+- `logo-amici-santuario.png`: logo mostrato nell'intestazione.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
 
 Per sostituire una foto, mantieni lo stesso nome file. In alternativa, cambia il percorso corrispondente in `index.html` o in `style.css`.
