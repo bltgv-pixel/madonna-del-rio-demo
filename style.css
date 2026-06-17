@@ -395,6 +395,105 @@ p {
   padding: 3.5rem 1.25rem 5rem;
 }
 
+.place-page {
+  width: min(100%, var(--page-max));
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem 5.5rem;
+}
+
+.place-intro {
+  margin-bottom: 2rem;
+}
+
+.place-heading {
+  align-items: center;
+}
+
+.place-heading h1 {
+  max-width: 12ch;
+  font-size: 3.5rem;
+}
+
+.video-frame {
+  overflow: hidden;
+  background: rgba(17, 11, 9, 0.92);
+  border: 1px solid rgba(226, 183, 107, 0.2);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 44px var(--shadow);
+}
+
+.place-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #100b09;
+}
+
+.place-map-section {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1.25rem 0 4rem;
+}
+
+.map-copy,
+.map-frame,
+.detail-card {
+  background: rgba(255, 248, 235, 0.075);
+  border: 1px solid rgba(226, 183, 107, 0.18);
+  border-radius: var(--radius);
+  box-shadow: 0 22px 40px var(--shadow);
+}
+
+.map-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+.map-copy p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.map-copy .button {
+  width: fit-content;
+}
+
+.map-frame {
+  overflow: hidden;
+  min-height: 24rem;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 24rem;
+  border: 0;
+  filter: saturate(0.82) contrast(0.96);
+}
+
+.place-details {
+  padding-top: 0.5rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detail-card {
+  padding: 1.2rem;
+}
+
+.detail-card p {
+  margin-top: 0.65rem;
+  color: var(--muted);
+}
+
 .donation-layout {
   display: grid;
   grid-template-columns: minmax(19rem, 0.72fr) minmax(0, 1.5fr);
@@ -722,8 +821,13 @@ p {
   .section-heading,
   .feature-grid,
   .light-callout,
-  .donation-layout {
+  .donation-layout,
+  .place-map-section {
     grid-template-columns: 1fr;
+  }
+
+  .detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .callout-media {
@@ -786,8 +890,21 @@ p {
   }
 
   .section,
-  .donation-page {
+  .donation-page,
+  .place-page {
     padding-inline: 1rem;
+  }
+
+  .place-heading h1 {
+    font-size: 2.65rem;
+  }
+
+  .map-copy .button {
+    width: 100%;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
   }
 
   .board-header {

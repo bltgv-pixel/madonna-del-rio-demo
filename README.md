@@ -14,6 +14,7 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 ## File principali
 
 - `index.html`: homepage evocativa del santuario.
+- `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
 - `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
 - `style.css`: colori, layout responsive e animazioni.
 - `app.js`: logica JavaScript vanilla per luci, contatore, progresso e reset.
@@ -28,6 +29,7 @@ Le immagini si trovano in `assets/`:
 - `facciata.jpg`: immagine della facciata.
 - `damasco.jpg`: texture damascata rossa.
 - `logo-amici-santuario.png`: logo mostrato nell'intestazione.
+- `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
 
 Per sostituire una foto, mantieni lo stesso nome file. In alternativa, cambia il percorso corrispondente in `index.html` o in `style.css`.
