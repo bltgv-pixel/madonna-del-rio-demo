@@ -35,6 +35,7 @@ Le immagini si trovano in `assets/`:
 - `madonnina-originale.jpeg`: immagine della formella originale usata nella cronologia.
 - `baldisserri-1893.pdf`: documento storico linkato dalla cronologia.
 - `baldisserri-1893.txt`: trascrizione consultabile del documento di don Luigi Baldisserri.
+- `eventi-baldisserri-cronologia.txt`: elenco riassuntivo degli eventi storici usati nella cronologia.
 - `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
 
