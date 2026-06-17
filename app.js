@@ -7,6 +7,34 @@
     initDonationDemo();
   }
 
+  if (page === "storia") {
+    initStoryCrawl();
+  }
+
+  function initStoryCrawl() {
+    const stage = document.querySelector("#storyStage");
+    const status = document.querySelector("#storyStatus");
+
+    if (!stage || !status) {
+      return;
+    }
+
+    function togglePause() {
+      const isPaused = stage.classList.toggle("is-paused");
+      stage.setAttribute("aria-pressed", isPaused ? "true" : "false");
+      status.textContent = isPaused ? "Testo storico in pausa." : "Testo storico in movimento.";
+    }
+
+    stage.setAttribute("aria-pressed", "false");
+    stage.addEventListener("click", togglePause);
+    stage.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        togglePause();
+      }
+    });
+  }
+
   function initDonationDemo() {
     const storageKey = "madonna-del-rio-luci-accese";
     const points = Array.from(document.querySelectorAll(".light-point"));

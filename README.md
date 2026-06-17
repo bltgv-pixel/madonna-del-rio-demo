@@ -14,6 +14,7 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 ## File principali
 
 - `index.html`: homepage evocativa del santuario.
+- `storia.html`: racconto storico animato con effetto testo in prospettiva.
 - `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
 - `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
 - `style.css`: colori, layout responsive e animazioni.
@@ -29,6 +30,7 @@ Le immagini si trovano in `assets/`:
 - `facciata.jpg`: immagine della facciata.
 - `damasco.jpg`: texture damascata rossa.
 - `logo-amici-santuario.png`: logo mostrato nell'intestazione.
+- `madonna-del-rio-1910.jpg`: immagine storica usata come sfondo nella pagina `storia.html`.
 - `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
 
