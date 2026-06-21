@@ -897,6 +897,98 @@ p {
   color: var(--muted);
 }
 
+.friends-page {
+  min-height: calc(100vh - 5rem);
+}
+
+.friends-hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: min(38rem, 68vh);
+  isolation: isolate;
+  overflow: hidden;
+  background-image: url("assets/hero-santuario.jpg");
+  background-position: center 42%;
+  background-size: cover;
+}
+
+.friends-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(0deg, rgba(25, 17, 13, 0.96), rgba(36, 27, 22, 0.26) 72%, rgba(36, 27, 22, 0.58));
+}
+
+.friends-hero-content {
+  width: min(100%, var(--page-max));
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem 4rem;
+}
+
+.friends-hero-content h1 {
+  max-width: 12ch;
+  font-size: 3.8rem;
+}
+
+.friends-hero-content > p:last-child {
+  max-width: 43rem;
+  margin-top: 1rem;
+  color: #f4eadc;
+  font-size: 1.18rem;
+}
+
+.friends-directory {
+  width: min(100%, var(--page-max));
+  margin: 0 auto;
+  padding: 4rem 1.25rem 5.5rem;
+}
+
+.friend-entry {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.78fr) minmax(0, 1.22fr);
+  overflow: hidden;
+  margin-top: 2rem;
+  background: rgba(255, 248, 235, 0.075);
+  border: 1px solid rgba(226, 183, 107, 0.2);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 44px var(--shadow);
+}
+
+.friend-visual {
+  min-height: 23rem;
+  background:
+    linear-gradient(135deg, rgba(113, 45, 29, 0.18), rgba(36, 27, 22, 0.3)),
+    url("assets/abside.jpg") center / cover;
+}
+
+.friend-copy {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.friend-copy h2 {
+  max-width: 20ch;
+  margin-top: 0.5rem;
+  font-size: 2.15rem;
+}
+
+.friend-copy > p:not(.eyebrow):not(.friend-domain) {
+  max-width: 43rem;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.friend-domain {
+  margin: 1.2rem 0 1.35rem;
+  color: var(--gold-bright);
+  font-weight: 800;
+}
+
 .donation-layout {
   display: grid;
   grid-template-columns: minmax(19rem, 0.72fr) minmax(0, 1.5fr);
@@ -1229,6 +1321,14 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .friend-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .friend-visual {
+    min-height: 19rem;
+  }
+
   .timeline::before,
   .timeline-item::before {
     display: none;
@@ -1325,8 +1425,26 @@ p {
   .section,
   .donation-page,
   .place-page,
-  .timeline-page {
+  .timeline-page,
+  .friends-directory,
+  .friends-hero-content {
     padding-inline: 1rem;
+  }
+
+  .friends-hero {
+    min-height: 30rem;
+  }
+
+  .friends-hero-content h1 {
+    font-size: 2.65rem;
+  }
+
+  .friend-copy {
+    padding: 1.35rem;
+  }
+
+  .friend-copy h2 {
+    font-size: 1.8rem;
   }
 
   .timeline-hero h1 {

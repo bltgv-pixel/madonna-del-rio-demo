@@ -17,6 +17,7 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 - `storia.html`: racconto storico animato con effetto testo in prospettiva.
 - `cronologia.html`: linea del tempo storica e struttura per le future tappe del recupero.
 - `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
+- `amici.html`: pagina dedicata alle realtà e ai siti amici del santuario.
 - `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
 - `style.css`: colori, layout responsive e animazioni.
 - `app.js`: logica JavaScript vanilla per luci, contatore, progresso e reset.
