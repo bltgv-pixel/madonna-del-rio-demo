@@ -223,7 +223,6 @@
     const stage = document.querySelector("#restorationStage");
     const amountButtons = Array.from(document.querySelectorAll(".experimental-amount"));
     const zoneButtons = Array.from(document.querySelectorAll("[data-exp-zone-choice]"));
-    const hotspotButtons = Array.from(document.querySelectorAll("[data-exp-zone-hotspot]"));
     const donateButton = document.querySelector("#experimentalDonateButton");
     const resetButton = document.querySelector("#experimentalResetButton");
     const statusMessage = document.querySelector("#experimentalStatus");
@@ -254,10 +253,6 @@
 
     zoneButtons.forEach((button) => {
       button.addEventListener("click", () => selectZone(button.dataset.expZoneChoice || "altare"));
-    });
-
-    hotspotButtons.forEach((button) => {
-      button.addEventListener("click", () => selectZone(button.dataset.expZoneHotspot || "altare"));
     });
 
     donateButton.addEventListener("click", () => {
@@ -294,11 +289,6 @@
         button.setAttribute("aria-pressed", isSelected ? "true" : "false");
       });
 
-      hotspotButtons.forEach((button) => {
-        const isSelected = button.dataset.expZoneHotspot === selectedZone;
-        button.classList.toggle("is-selected", isSelected);
-        button.setAttribute("aria-pressed", isSelected ? "true" : "false");
-      });
     }
 
     function renderExperimentalState() {
