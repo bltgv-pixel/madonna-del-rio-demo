@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donazioni sperimentale - Madonna del Rio</title>
+    <meta
+      name="description"
+      content="Pagina demo sperimentale per simulare donazioni ripetute e illuminare il rendering del possibile restauro."
+    >
+    <link rel="icon" href="assets/logo-amici-santuario.png">
+    <link rel="stylesheet" href="style.css?v=20260623-donazioni-sperimentale">
+  </head>
+  <body data-page="donazioni-sperimentale">
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Madonna del Rio - home">
+        <img class="brand-logo" src="assets/logo-amici-santuario.png" alt="" aria-hidden="true">
+        <span>
+          <strong>Madonna del Rio</strong>
+          <small>Fontanelice</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="index.html#progetto">Progetto</a>
+        <a href="storia.html">La Storia</a>
+        <a href="cronologia.html">Cronologia</a>
+        <a href="luogo.html">Il Luogo</a>
+        <a href="donazioni.html">Donazioni</a>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="experimental-donation-page">
+      <section class="experimental-donation-layout" aria-labelledby="titolo-donazioni-sperimentale">
+        <aside class="experimental-panel">
+          <p class="eyebrow">Demo sperimentale</p>
+          <h1 id="titolo-donazioni-sperimentale">Illumina il restauro</h1>
+          <p>
+            Scegli un importo simbolico e una zona del santuario. Ogni donazione finta aggiunge luce
+            alla zona scelta, senza esaurirla: si puo' continuare a illuminare la chiesa piu' volte.
+          </p>
+
+          <div class="amounts" aria-labelledby="titolo-importi-sperimentali">
+            <h2 id="titolo-importi-sperimentali">Importo simbolico</h2>
+            <div class="amount-grid" role="group" aria-label="Importi simbolici selezionabili">
+              <button class="amount-option experimental-amount" type="button" data-exp-amount="10">10 &euro;</button>
+              <button class="amount-option experimental-amount is-selected" type="button" data-exp-amount="25" aria-pressed="true">25 &euro;</button>
+              <button class="amount-option experimental-amount" type="button" data-exp-amount="50">50 &euro;</button>
+              <button class="amount-option experimental-amount" type="button" data-exp-amount="100">100 &euro;</button>
+              <button class="amount-option experimental-amount amount-free" type="button" data-exp-amount="libera">Offerta libera</button>
+            </div>
+          </div>
+
+          <div class="experimental-zones" aria-labelledby="titolo-zone-sperimentali">
+            <h2 id="titolo-zone-sperimentali">Zona da illuminare</h2>
+            <div class="zone-choice-grid" role="group" aria-label="Zone del rendering">
+              <button class="zone-choice is-selected" type="button" data-exp-zone-choice="altare" aria-pressed="true">
+                <span>Altare maggiore</span>
+                <strong data-exp-zone-level="altare">0</strong>
+                <i><b data-exp-zone-meter="altare"></b></i>
+              </button>
+              <button class="zone-choice" type="button" data-exp-zone-choice="abside" aria-pressed="false">
+                <span>Abside e coro</span>
+                <strong data-exp-zone-level="abside">0</strong>
+                <i><b data-exp-zone-meter="abside"></b></i>
+              </button>
+              <button class="zone-choice" type="button" data-exp-zone-choice="navata" aria-pressed="false">
+                <span>Navata</span>
+                <strong data-exp-zone-level="navata">0</strong>
+                <i><b data-exp-zone-meter="navata"></b></i>
+              </button>
+              <button class="zone-choice" type="button" data-exp-zone-choice="altare-sinistro" aria-pressed="false">
+                <span>Altare laterale sinistro</span>
+                <strong data-exp-zone-level="altare-sinistro">0</strong>
+                <i><b data-exp-zone-meter="altare-sinistro"></b></i>
+              </button>
+              <button class="zone-choice" type="button" data-exp-zone-choice="altare-destro" aria-pressed="false">
+                <span>Altare laterale destro</span>
+                <strong data-exp-zone-level="altare-destro">0</strong>
+                <i><b data-exp-zone-meter="altare-destro"></b></i>
+              </button>
+              <button class="zone-choice" type="button" data-exp-zone-choice="pareti" aria-pressed="false">
+                <span>Pareti e volte</span>
+                <strong data-exp-zone-level="pareti">0</strong>
+                <i><b data-exp-zone-meter="pareti"></b></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="experimental-actions">
+            <button class="button button-primary button-wide" id="experimentalDonateButton" type="button">
+              Simula donazione sulla zona scelta
+            </button>
+            <button class="button button-ghost button-wide" id="experimentalResetButton" type="button">
+              Reset demo
+            </button>
+          </div>
+          <p class="demo-note">Pagina scollegata dal sito pubblico: e' solo una prova, senza pagamenti reali.</p>
+        </aside>
+
+        <section class="rendering-board" aria-labelledby="titolo-rendering-donazioni">
+          <div class="rendering-header">
+            <div>
+              <p class="eyebrow">Rendering del possibile restauro</p>
+              <h2 id="titolo-rendering-donazioni">Una chiesa che si riaccende</h2>
+            </div>
+            <div class="rendering-stats" aria-live="polite">
+              <span>
+                <strong id="experimentalDonationCount">0</strong>
+                donazioni finte
+              </span>
+              <span>
+                <strong id="experimentalEnergyCount">0</strong>
+                punti luce
+              </span>
+            </div>
+          </div>
+
+          <div class="experimental-progress" aria-label="Avanzamento della luminosita">
+            <div class="progress-bar">
+              <span id="experimentalProgressFill"></span>
+            </div>
+            <p id="experimentalProgressText">Primo livello di luce: 0 punti accumulati</p>
+          </div>
+
+          <div
+            class="restoration-stage"
+            id="restorationStage"
+            aria-label="Rendering del santuario in penombra con zone cliccabili da illuminare"
+          >
+            <img
+              class="restoration-render"
+              src="assets/rendering-restauro-interno.png"
+              alt="Rendering dell'interno restaurato del santuario della Madonna del Rio"
+            >
+            <div class="render-veil" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-altare" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-abside" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-navata" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-altare-sinistro" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-altare-destro" aria-hidden="true"></div>
+            <div class="zone-glow zone-glow-pareti" aria-hidden="true"></div>
+
+            <button class="render-zone render-zone-altare" type="button" data-exp-zone-hotspot="altare">
+              <span>Altare</span>
+            </button>
+            <button class="render-zone render-zone-abside" type="button" data-exp-zone-hotspot="abside">
+              <span>Abside</span>
+            </button>
+            <button class="render-zone render-zone-navata" type="button" data-exp-zone-hotspot="navata">
+              <span>Navata</span>
+            </button>
+            <button class="render-zone render-zone-altare-sinistro" type="button" data-exp-zone-hotspot="altare-sinistro">
+              <span>Altare sx</span>
+            </button>
+            <button class="render-zone render-zone-altare-destro" type="button" data-exp-zone-hotspot="altare-destro">
+              <span>Altare dx</span>
+            </button>
+            <button class="render-zone render-zone-pareti" type="button" data-exp-zone-hotspot="pareti">
+              <span>Pareti</span>
+            </button>
+          </div>
+
+          <p class="status-message" id="experimentalStatus" role="status" aria-live="polite">
+            Scegli importo e zona, poi simula la donazione. Puoi ripetere la prova tutte le volte che vuoi.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Amici del santuario della Madonna del Rio</strong>
+        <p>Associazione culturale - Fontanelice (BO)</p>
+      </div>
+      <div>
+        <p>Email: info@amicimadonnadelrio.example</p>
+        <p>Demo senza pagamenti reali</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -19,6 +19,7 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 - `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
 - `amici.html`: pagina dedicata alle realtà e ai siti amici del santuario.
 - `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
+- `donazioni-sperimentale.html`: pagina sperimentale non collegata alla navigazione, con rendering del restauro e illuminazione progressiva per zone.
 - `style.css`: colori, layout responsive e animazioni.
 - `app.js`: logica JavaScript vanilla per luci, contatore, progresso e reset.
 - `assets/`: immagini usate nella demo.
@@ -39,6 +40,7 @@ Le immagini si trovano in `assets/`:
 - `eventi-baldisserri-cronologia.txt`: elenco riassuntivo degli eventi storici usati nella cronologia.
 - `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
+- `rendering-restauro-interno.png`: rendering usato nella pagina sperimentale `donazioni-sperimentale.html`.
 
 Per sostituire una foto, mantieni lo stesso nome file. In alternativa, cambia il percorso corrispondente in `index.html` o in `style.css`.
 
