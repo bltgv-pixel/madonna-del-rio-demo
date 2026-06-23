@@ -9,7 +9,7 @@
       content="Pagina demo sperimentale per simulare donazioni ripetute e illuminare il rendering del possibile restauro."
     >
     <link rel="icon" href="assets/logo-amici-santuario.png">
-    <link rel="stylesheet" href="style.css?v=20260623-donazioni-menu-only">
+    <link rel="stylesheet" href="style.css?v=20260623-donazioni-controls-near-image">
   </head>
   <body data-page="donazioni-sperimentale">
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -89,14 +89,6 @@
             </div>
           </div>
 
-          <div class="experimental-actions">
-            <button class="button button-primary button-wide" id="experimentalDonateButton" type="button">
-              Simula donazione sulla zona scelta
-            </button>
-            <button class="button button-ghost button-wide" id="experimentalResetButton" type="button">
-              Reset demo
-            </button>
-          </div>
           <p class="demo-note">Pagina scollegata dal sito pubblico: e' solo una prova, senza pagamenti reali.</p>
         </aside>
 
@@ -125,28 +117,40 @@
             <p id="experimentalProgressText">Primo livello di luce: 0 punti accumulati</p>
           </div>
 
-          <div
-            class="restoration-stage"
-            id="restorationStage"
-            aria-label="Rendering del santuario in penombra che si illumina in base alla zona scelta dal menu"
-          >
-            <img
-              class="restoration-render"
-              src="assets/rendering-restauro-interno.png"
-              alt="Rendering dell'interno restaurato del santuario della Madonna del Rio"
+          <div class="rendering-main">
+            <div
+              class="restoration-stage"
+              id="restorationStage"
+              aria-label="Rendering del santuario in penombra che si illumina in base alla zona scelta dal menu"
             >
-            <div class="render-veil" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-altare" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-abside" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-navata" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-altare-sinistro" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-altare-destro" aria-hidden="true"></div>
-            <div class="zone-glow zone-glow-pareti" aria-hidden="true"></div>
-          </div>
+              <img
+                class="restoration-render"
+                src="assets/rendering-restauro-interno.png"
+                alt="Rendering dell'interno restaurato del santuario della Madonna del Rio"
+              >
+              <div class="render-veil" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-altare" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-abside" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-navata" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-altare-sinistro" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-altare-destro" aria-hidden="true"></div>
+              <div class="zone-glow zone-glow-pareti" aria-hidden="true"></div>
+            </div>
 
-          <p class="status-message" id="experimentalStatus" role="status" aria-live="polite">
-            Scegli importo e zona, poi simula la donazione. Puoi ripetere la prova tutte le volte che vuoi.
-          </p>
+            <div class="rendering-action-card">
+              <div class="experimental-actions">
+                <button class="button button-primary button-wide" id="experimentalDonateButton" type="button">
+                  Simula donazione sulla zona scelta
+                </button>
+                <button class="button button-ghost button-wide" id="experimentalResetButton" type="button">
+                  Reset demo
+                </button>
+              </div>
+              <p class="status-message" id="experimentalStatus" role="status" aria-live="polite">
+                Scegli importo e zona, poi simula la donazione. Puoi ripetere la prova tutte le volte che vuoi.
+              </p>
+            </div>
+          </div>
         </section>
       </section>
     </main>
@@ -162,6 +166,6 @@
       </div>
     </footer>
 
-    <script src="app.js?v=20260623-donazioni-menu-only"></script>
+    <script src="app.js?v=20260623-donazioni-controls-near-image"></script>
   </body>
 </html>
