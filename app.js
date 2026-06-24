@@ -7,7 +7,7 @@
     initDonationDemo();
   }
 
-  if (page === "donazioni-sperimentale") {
+  if (page === "donazioni-sperimentale" || page === "donazioni-rendering") {
     initExperimentalDonationDemo();
   }
 

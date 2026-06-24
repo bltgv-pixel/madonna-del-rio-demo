@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donazioni piantina - Madonna del Rio</title>
+    <meta
+      name="description"
+      content="Versione salvata della pagina donazioni con piantina SVG e luci puntuali."
+    >
+    <link rel="icon" href="assets/logo-amici-santuario.png">
+    <link rel="stylesheet" href="style.css?v=20260624-donazioni-rendering">
+  </head>
+  <body data-page="donazioni">
+    <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Madonna del Rio - home">
+        <img class="brand-logo" src="assets/logo-amici-santuario.png" alt="" aria-hidden="true">
+        <span>
+          <strong>Madonna del Rio</strong>
+          <small>Fontanelice</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="index.html#progetto">Progetto</a>
+        <a href="storia.html">La Storia</a>
+        <a href="cronologia.html">Cronologia</a>
+        <a href="luogo.html">Il Luogo</a>
+        <a href="donazioni.html">Donazioni</a>
+      </nav>
+    </header>
+
+    <main id="contenuto" class="donation-page">
+      <section class="donation-layout" aria-labelledby="titolo-donazioni">
+        <aside class="donation-panel">
+          <p class="eyebrow">Raccolta simbolica</p>
+          <h1 id="titolo-donazioni">Dona una luce</h1>
+          <p>
+            Ogni luce accesa rappresenta un gesto concreto per salvare la Madonna del Rio.
+          </p>
+
+          <div class="amounts" aria-labelledby="titolo-importi">
+            <h2 id="titolo-importi">Importo simbolico</h2>
+            <div class="amount-grid" role="group" aria-label="Importi simbolici selezionabili">
+              <button class="amount-option" type="button" data-amount="10">10 €</button>
+              <button class="amount-option is-selected" type="button" data-amount="25" aria-pressed="true">25 €</button>
+              <button class="amount-option" type="button" data-amount="50">50 €</button>
+              <button class="amount-option" type="button" data-amount="100">100 €</button>
+              <button class="amount-option amount-free" type="button" data-amount="libera">Offerta libera</button>
+            </div>
+          </div>
+
+          <button class="button button-primary button-wide" id="fakeDonationButton" type="button">
+            Procedi con donazione simulata
+          </button>
+          <p class="demo-note">Versione precedente salvata: nessun pagamento reale viene avviato o registrato.</p>
+        </aside>
+
+        <section class="sanctuary-board" aria-labelledby="titolo-piantina">
+          <div class="board-header">
+            <div>
+              <p class="eyebrow">Piantina interattiva</p>
+              <h2 id="titolo-piantina">Accendi un punto del santuario</h2>
+            </div>
+            <div class="light-counter" aria-live="polite">
+              <strong id="lightsCount">0</strong>
+              <span>/</span>
+              <span id="totalLights">0</span>
+              <small>luci accese</small>
+            </div>
+          </div>
+
+          <div class="progress-wrap" aria-label="Avanzamento luci accese">
+            <div class="progress-bar">
+              <span id="progressFill"></span>
+            </div>
+            <p id="progressText">0% del santuario illuminato</p>
+          </div>
+
+          <div class="plan-shell" id="planShell">
+            <svg
+              class="church-plan"
+              viewBox="0 0 720 980"
+              role="img"
+              aria-labelledby="planTitle planDesc"
+            >
+              <title id="planTitle">Piantina stilizzata della chiesa della Madonna del Rio</title>
+              <desc id="planDesc">
+                Piantina in penombra con ingresso, navata, cappelle laterali, abside semicircolare, sentiero e campanile.
+                I punti spenti possono essere accesi durante la simulazione.
+              </desc>
+              <defs>
+                <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="8" result="blur"></feGaussianBlur>
+                  <feColorMatrix
+                    in="blur"
+                    type="matrix"
+                    values="1 0 0 0 0.93  0 1 0 0 0.62  0 0 1 0 0.16  0 0 0 0.85 0"
+                    result="goldBlur"
+                  ></feColorMatrix>
+                  <feMerge>
+                    <feMergeNode in="goldBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                  </feMerge>
+                </filter>
+                <linearGradient id="stoneGradient" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#ad9990"></stop>
+                  <stop offset="48%" stop-color="#75675c"></stop>
+                  <stop offset="100%" stop-color="#584839"></stop>
+                </linearGradient>
+                <radialGradient id="floorGlow" cx="50%" cy="36%" r="70%">
+                  <stop offset="0%" stop-color="#4a3629"></stop>
+                  <stop offset="58%" stop-color="#2f241e"></stop>
+                  <stop offset="100%" stop-color="#1b1411"></stop>
+                </radialGradient>
+              </defs>
+
+              <rect width="720" height="980" rx="26" fill="#1b1411"></rect>
+              <rect x="56" y="58" width="608" height="864" rx="18" fill="url(#floorGlow)" opacity="0.96"></rect>
+
+              <path
+                class="plan-shadow"
+                d="M272 145
+                   A88 88 0 0 1 448 145
+                   L448 258
+                   L576 258
+                   L576 406
+                   L522 406
+                   L522 704
+                   L596 704
+                   L596 846
+                   L124 846
+                   L124 704
+                   L198 704
+                   L198 406
+                   L144 406
+                   L144 258
+                   L272 258
+                   Z"
+              ></path>
+              <path
+                class="plan-wall"
+                d="M272 145
+                   A88 88 0 0 1 448 145
+                   L448 258
+                   L576 258
+                   L576 406
+                   L522 406
+                   L522 704
+                   L596 704
+                   L596 846
+                   L124 846
+                   L124 704
+                   L198 704
+                   L198 406
+                   L144 406
+                   L144 258
+                   L272 258
+                   Z"
+              ></path>
+              <path
+                class="plan-floor"
+                d="M304 172
+                   A56 56 0 0 1 416 172
+                   L416 296
+                   L530 296
+                   L530 366
+                   L478 366
+                   L478 742
+                   L548 742
+                   L548 808
+                   L172 808
+                   L172 742
+                   L242 742
+                   L242 366
+                   L190 366
+                   L190 296
+                   L304 296
+                   Z"
+              ></path>
+
+              <path class="plan-line" d="M242 366 L478 366"></path>
+              <path class="plan-line" d="M242 742 L478 742"></path>
+              <path class="plan-line" d="M242 500 L478 500"></path>
+              <path class="plan-line" d="M360 172 L360 808"></path>
+              <path class="plan-line" d="M190 296 L530 296"></path>
+              <path class="plan-line" d="M172 808 L548 808"></path>
+              <rect class="plan-door" x="320" y="826" width="80" height="20" rx="4"></rect>
+              <rect class="plan-altar" x="309" y="214" width="102" height="38" rx="5"></rect>
+              <rect class="side-room" x="93" y="432" width="104" height="204" rx="8"></rect>
+              <rect class="side-room" x="523" y="432" width="104" height="204" rx="8"></rect>
+              <path class="side-room" d="M520 256 L628 256 L628 172 L666 172 L666 514 L628 514 L628 406 L576 406 L576 258 Z"></path>
+              <path class="path-line" d="M362 852 C354 890 332 914 296 934 C255 957 219 964 172 960"></path>
+
+              <text class="plan-label" x="360" y="126" text-anchor="middle">abside</text>
+              <text class="plan-label" x="360" y="474" text-anchor="middle">navata</text>
+              <text class="plan-label" x="360" y="787" text-anchor="middle">ingresso</text>
+              <text class="plan-label" x="146" y="536" text-anchor="middle">cappella</text>
+              <text class="plan-label" x="574" y="536" text-anchor="middle">cappella</text>
+              <text class="plan-label" x="640" y="342" text-anchor="middle" transform="rotate(90 640 342)">campanile</text>
+
+              <g id="lightPoints">
+                <circle class="light-point" cx="360" cy="172" r="20" data-light-id="abside-1" data-area="abside" tabindex="0" role="button" aria-label="Accendi una luce nell'abside"></circle>
+                <circle class="light-point" cx="318" cy="198" r="20" data-light-id="abside-2" data-area="abside" tabindex="0" role="button" aria-label="Accendi una luce nella parete sinistra dell'abside"></circle>
+                <circle class="light-point" cx="402" cy="198" r="20" data-light-id="abside-3" data-area="abside" tabindex="0" role="button" aria-label="Accendi una luce nella parete destra dell'abside"></circle>
+                <circle class="light-point" cx="360" cy="244" r="20" data-light-id="altare-1" data-area="altare" tabindex="0" role="button" aria-label="Accendi una luce presso l'altare"></circle>
+
+                <circle class="light-point" cx="286" cy="326" r="20" data-light-id="navata-1" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce nella navata"></circle>
+                <circle class="light-point" cx="360" cy="326" r="20" data-light-id="navata-2" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce al centro della navata"></circle>
+                <circle class="light-point" cx="434" cy="326" r="20" data-light-id="navata-3" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce nella navata"></circle>
+                <circle class="light-point" cx="286" cy="430" r="20" data-light-id="navata-4" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce lungo la navata sinistra"></circle>
+                <circle class="light-point" cx="360" cy="430" r="20" data-light-id="navata-5" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce lungo la navata centrale"></circle>
+                <circle class="light-point" cx="434" cy="430" r="20" data-light-id="navata-6" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce lungo la navata destra"></circle>
+                <circle class="light-point" cx="286" cy="548" r="20" data-light-id="navata-7" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce nella navata bassa"></circle>
+                <circle class="light-point" cx="360" cy="548" r="20" data-light-id="navata-8" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce nel centro della chiesa"></circle>
+                <circle class="light-point" cx="434" cy="548" r="20" data-light-id="navata-9" data-area="navata" tabindex="0" role="button" aria-label="Accendi una luce nella navata bassa"></circle>
+
+                <circle class="light-point" cx="275" cy="674" r="20" data-light-id="ingresso-1" data-area="ingresso" tabindex="0" role="button" aria-label="Accendi una luce verso l'ingresso"></circle>
+                <circle class="light-point" cx="360" cy="674" r="20" data-light-id="ingresso-2" data-area="ingresso" tabindex="0" role="button" aria-label="Accendi una luce prima dell'ingresso"></circle>
+                <circle class="light-point" cx="445" cy="674" r="20" data-light-id="ingresso-3" data-area="ingresso" tabindex="0" role="button" aria-label="Accendi una luce verso l'ingresso"></circle>
+                <circle class="light-point" cx="330" cy="782" r="20" data-light-id="porta-1" data-area="ingresso" tabindex="0" role="button" aria-label="Accendi una luce sulla soglia"></circle>
+                <circle class="light-point" cx="390" cy="782" r="20" data-light-id="porta-2" data-area="ingresso" tabindex="0" role="button" aria-label="Accendi una luce sulla soglia"></circle>
+
+                <circle class="light-point" cx="145" cy="470" r="20" data-light-id="cappella-sx-1" data-area="cappella sinistra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella sinistra"></circle>
+                <circle class="light-point" cx="145" cy="545" r="20" data-light-id="cappella-sx-2" data-area="cappella sinistra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella sinistra"></circle>
+                <circle class="light-point" cx="145" cy="612" r="20" data-light-id="cappella-sx-3" data-area="cappella sinistra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella sinistra"></circle>
+                <circle class="light-point" cx="575" cy="470" r="20" data-light-id="cappella-dx-1" data-area="cappella destra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella destra"></circle>
+                <circle class="light-point" cx="575" cy="545" r="20" data-light-id="cappella-dx-2" data-area="cappella destra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella destra"></circle>
+                <circle class="light-point" cx="575" cy="612" r="20" data-light-id="cappella-dx-3" data-area="cappella destra" tabindex="0" role="button" aria-label="Accendi una luce nella cappella destra"></circle>
+
+                <circle class="light-point" cx="244" cy="276" r="20" data-light-id="parete-sx-1" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulle pareti decorate"></circle>
+                <circle class="light-point" cx="476" cy="276" r="20" data-light-id="parete-dx-1" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulle pareti decorate"></circle>
+                <circle class="light-point" cx="226" cy="515" r="20" data-light-id="parete-sx-2" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulla parete sinistra"></circle>
+                <circle class="light-point" cx="494" cy="515" r="20" data-light-id="parete-dx-2" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulla parete destra"></circle>
+                <circle class="light-point" cx="226" cy="626" r="20" data-light-id="parete-sx-3" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulla parete sinistra"></circle>
+                <circle class="light-point" cx="494" cy="626" r="20" data-light-id="parete-dx-3" data-area="pareti" tabindex="0" role="button" aria-label="Accendi una luce sulla parete destra"></circle>
+
+                <circle class="light-point" cx="624" cy="210" r="20" data-light-id="campanile-1" data-area="campanile" tabindex="0" role="button" aria-label="Accendi una luce nel campanile"></circle>
+                <circle class="light-point" cx="628" cy="302" r="20" data-light-id="campanile-2" data-area="campanile" tabindex="0" role="button" aria-label="Accendi una luce nel campanile"></circle>
+                <circle class="light-point" cx="628" cy="394" r="20" data-light-id="campanile-3" data-area="campanile" tabindex="0" role="button" aria-label="Accendi una luce nel campanile"></circle>
+
+                <circle class="light-point" cx="352" cy="874" r="20" data-light-id="sentiero-1" data-area="sentiero" tabindex="0" role="button" aria-label="Accendi una luce sul sentiero"></circle>
+                <circle class="light-point" cx="296" cy="920" r="20" data-light-id="sentiero-2" data-area="sentiero" tabindex="0" role="button" aria-label="Accendi una luce sul sentiero"></circle>
+                <circle class="light-point" cx="226" cy="948" r="20" data-light-id="sentiero-3" data-area="sentiero" tabindex="0" role="button" aria-label="Accendi una luce sul sentiero"></circle>
+              </g>
+            </svg>
+          </div>
+
+          <div class="board-actions">
+            <button class="button button-primary" id="simulateButton" type="button">Simula una donazione</button>
+            <button class="button button-ghost" id="resetButton" type="button">Reset demo</button>
+          </div>
+          <p class="status-message" id="statusMessage" role="status" aria-live="polite">
+            Premi “Simula una donazione”, poi scegli un punto spento sulla piantina.
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Amici del santuario della Madonna del Rio</strong>
+        <p>Associazione culturale - Fontanelice (BO)</p>
+      </div>
+      <div>
+        <p>Email: info@amicimadonnadelrio.example</p>
+        <p>Demo senza pagamenti reali</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

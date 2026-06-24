@@ -18,8 +18,9 @@ La demo funziona anche copiando l'intera cartella su una chiavetta USB o su un a
 - `cronologia.html`: linea del tempo storica e struttura per le future tappe del recupero.
 - `luogo.html`: pagina con filmato drone, descrizione del luogo e mappa.
 - `amici.html`: pagina dedicata alle realtà e ai siti amici del santuario.
-- `donazioni.html`: pagina interattiva con piantina SVG e simulazione donazioni.
-- `donazioni-sperimentale.html`: pagina sperimentale non collegata alla navigazione, con rendering del restauro e illuminazione progressiva per zone.
+- `donazioni.html`: pagina donazioni in linea nella demo, con rendering del restauro e illuminazione progressiva per zone.
+- `donazioni-piantina.html`: vecchia pagina donazioni salvata, con piantina SVG e simulazione luci puntuali.
+- `donazioni-sperimentale.html`: copia/alias della pagina sperimentale approvata, mantenuta per non rompere eventuali link condivisi.
 - `style.css`: colori, layout responsive e animazioni.
 - `app.js`: logica JavaScript vanilla per luci, contatore, progresso e reset.
 - `assets/`: immagini usate nella demo.
@@ -40,7 +41,7 @@ Le immagini si trovano in `assets/`:
 - `eventi-baldisserri-cronologia.txt`: elenco riassuntivo degli eventi storici usati nella cronologia.
 - `filmato-drone.mp4`: video usato nella pagina `luogo.html`.
 - `piantina-riferimento.jpg`: immagine di riferimento, non necessaria al funzionamento della piantina SVG.
-- `rendering-restauro-interno.png`: rendering usato nella pagina sperimentale `donazioni-sperimentale.html`.
+- `rendering-restauro-interno.png`: rendering usato nella pagina donazioni `donazioni.html`.
 
 Per sostituire una foto, mantieni lo stesso nome file. In alternativa, cambia il percorso corrispondente in `index.html` o in `style.css`.
 
@@ -64,7 +65,7 @@ Queste variabili controllano la palette principale: rosso damascato, intonaco, p
 
 ## Come aggiungere o spostare i punti luminosi
 
-La piantina è un SVG dentro `donazioni.html`.
+La vecchia piantina è un SVG dentro `donazioni-piantina.html`.
 Cerca il gruppo:
 
 ```html
@@ -93,7 +94,7 @@ Per cambiare la zona mostrata nel messaggio, modifica `data-area`.
 
 ## Come azzerare le luci
 
-Nella pagina `donazioni.html` usa il pulsante "Reset demo".
+Nella pagina `donazioni.html` o nella vecchia `donazioni-piantina.html` usa il pulsante "Reset demo".
 Il reset cancella solo i dati salvati nel browser per questa demo.
 
 ## Pubblicazione futura
