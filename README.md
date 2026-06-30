@@ -34,8 +34,9 @@ Le immagini si trovano in `assets/`:
 - `facciata.jpg`: immagine della facciata.
 - `damasco.jpg`: texture damascata rossa.
 - `logo-amici-santuario.png`: logo mostrato nell'intestazione.
-- `madonna-del-rio-1910.jpg`: immagine storica usata come sfondo nella pagina `storia.html`.
-- `madonnina-originale.jpeg`: immagine della formella originale usata nella cronologia.
+- `madonna-del-rio-1910.jpg`: immagine storica usata nella home e come sfondo nella pagina `storia.html`.
+- `madonna-del-rio-dall-alto.jpg`: vista dall'alto del santuario usata nella card restauro della home.
+- `madonnina-originale.jpeg`: immagine della formella originale usata nella home e nella cronologia.
 - `baldisserri-1893.pdf`: documento storico linkato dalla cronologia.
 - `baldisserri-1893.txt`: trascrizione consultabile del documento di don Luigi Baldisserri.
 - `eventi-baldisserri-cronologia.txt`: elenco riassuntivo degli eventi storici usati nella cronologia.
